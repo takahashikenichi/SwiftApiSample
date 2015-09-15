@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T73-4a-5ka">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Shop Info View Controller-->
+        <scene sceneID="2kZ-be-ivY">
+            <objects>
+                <viewController id="T73-4a-5ka" customClass="ShopInfoViewController" customModule="WebApiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ja2-xr-vle"/>
+                        <viewControllerLayoutGuide type="bottom" id="wbD-Wg-bOx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="90G-q2-HaZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QcY-3q-iGe">
+                                <rect key="frame" x="16" y="28" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="t2R-dW-Tnn"/>
+                                    <constraint firstAttribute="height" constant="100" id="t9A-bz-Api"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="キャッチコピー" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e30-ro-3Lq">
+                                <rect key="frame" x="124" y="84" width="460" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="hOz-8n-uGL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店名" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHl-6n-U6L">
+                                <rect key="frame" x="124" y="28" width="460" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="PFy-bP-9Pa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="住所" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U0-my-oC6">
+                                <rect key="frame" x="16" y="136" width="568" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="u5V-Qu-SBs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgn-ZW-R2R">
+                                <rect key="frame" x="16" y="550" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0T1-cd-ZL6"/>
+                                    <constraint firstAttribute="width" constant="100" id="AxT-kf-40y"/>
+                                </constraints>
+                                <state key="normal" title="Web">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="browserButtonClicked:" destination="T73-4a-5ka" eventType="touchUpInside" id="TOD-7e-6bU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zL8-iP-rqi">
+                                <rect key="frame" x="484" y="550" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EV5-2D-9fa"/>
+                                    <constraint firstAttribute="width" constant="100" id="sNG-KT-btx"/>
+                                </constraints>
+                                <state key="normal" title="電話">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="telButtonClicked:" destination="T73-4a-5ka" eventType="touchUpInside" id="oOl-H8-11S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wbD-Wg-bOx" firstAttribute="top" secondItem="zL8-iP-rqi" secondAttribute="bottom" constant="20" id="0Eb-Vd-7ih"/>
+                            <constraint firstItem="QcY-3q-iGe" firstAttribute="top" secondItem="ja2-xr-vle" secondAttribute="bottom" constant="8" id="2Kw-p1-1A3"/>
+                            <constraint firstItem="3U0-my-oC6" firstAttribute="leading" secondItem="90G-q2-HaZ" secondAttribute="leading" constant="16" id="7RC-0M-lIp"/>
+                            <constraint firstItem="e30-ro-3Lq" firstAttribute="top" secondItem="nHl-6n-U6L" secondAttribute="bottom" constant="8" id="DLW-QJ-evi"/>
+                            <constraint firstAttribute="trailing" secondItem="3U0-my-oC6" secondAttribute="trailing" constant="16" id="Nan-Bw-GO8"/>
+                            <constraint firstItem="3U0-my-oC6" firstAttribute="top" secondItem="QcY-3q-iGe" secondAttribute="bottom" constant="8" id="Qpt-YM-vx2"/>
+                            <constraint firstAttribute="trailing" secondItem="nHl-6n-U6L" secondAttribute="trailing" constant="16" id="VWW-MW-Q8W"/>
+                            <constraint firstItem="mgn-ZW-R2R" firstAttribute="leading" secondItem="90G-q2-HaZ" secondAttribute="leading" constant="16" id="Vmw-fD-Pxx"/>
+                            <constraint firstItem="wbD-Wg-bOx" firstAttribute="top" secondItem="mgn-ZW-R2R" secondAttribute="bottom" constant="20" id="Xjh-OJ-ISt"/>
+                            <constraint firstItem="nHl-6n-U6L" firstAttribute="top" secondItem="ja2-xr-vle" secondAttribute="bottom" constant="8" id="dbM-16-aby"/>
+                            <constraint firstItem="QcY-3q-iGe" firstAttribute="leading" secondItem="90G-q2-HaZ" secondAttribute="leading" constant="16" id="lau-oG-ysT"/>
+                            <constraint firstAttribute="trailing" secondItem="zL8-iP-rqi" secondAttribute="trailing" constant="16" id="lhl-fi-oWM"/>
+                            <constraint firstItem="nHl-6n-U6L" firstAttribute="leading" secondItem="QcY-3q-iGe" secondAttribute="trailing" constant="8" id="myJ-SY-cj6"/>
+                            <constraint firstItem="e30-ro-3Lq" firstAttribute="leading" secondItem="QcY-3q-iGe" secondAttribute="trailing" constant="8" id="rfG-m2-BfC"/>
+                            <constraint firstAttribute="trailing" secondItem="e30-ro-3Lq" secondAttribute="trailing" constant="16" id="ri8-qU-wbu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="3U0-my-oC6" id="EUO-GU-bm4"/>
+                        <outlet property="catchCopyLabel" destination="e30-ro-3Lq" id="HR2-9f-fXg"/>
+                        <outlet property="imageView" destination="QcY-3q-iGe" id="DYl-FE-jMs"/>
+                        <outlet property="shopNameLavel" destination="nHl-6n-U6L" id="Tse-Wb-6ZE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adF-Df-w1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="744" y="872"/>
+        </scene>
+    </scenes>
+</document>
