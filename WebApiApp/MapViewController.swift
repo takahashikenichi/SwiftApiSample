@@ -17,7 +17,7 @@ class MapViewController: UIViewController, YMKMapViewDelegate {
         // Do any additional setup after loading the view.
         
         // YMKMapViewを生成する
-        mapView = YMKMapView(frame: self.view.bounds, appid: "dj0zaiZpPURka0xTb3ZyeUV6MiZzPWNvbnN1bWVyc2VjcmV0Jng9NTc")
+        mapView = YMKMapView(frame: self.view.bounds, appid: "")
         mapView.showsUserLocation = true
         mapView.scalebarVisible = true
         mapView.delegate = self
@@ -52,7 +52,7 @@ class MapViewController: UIViewController, YMKMapViewDelegate {
     func setLocation(location: CLLocationCoordinate2D) {
         // 緯度・経度ともに世界測地系で0.02の範囲とする
         let span = YMKCoordinateSpanMake(0.02, 0.02)
-        // 引数で渡されたLocaltionを中心として、上記の範囲を表示領域とする
+        // 引数で渡されたlocationを中心として、上記の範囲を表示領域とする
         let region = YMKCoordinateRegionMake(location, span)
         mapView.setRegion(region, animated: true)
     }
@@ -85,7 +85,7 @@ class MapViewController: UIViewController, YMKMapViewDelegate {
         return nil
     }
     
-    func mapView(mapView: YMKMapView!, annotationView view: YMKAnnotationView!, calloutAccessoryCountrolTapped control: UIControl!) {
+    func mapView(mapView: YMKMapView!, annotationView view: YMKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         let index = control.tag
         let parentViewController = self.parentViewController as! ViewController
         

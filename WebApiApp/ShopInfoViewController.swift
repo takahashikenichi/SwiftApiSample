@@ -19,9 +19,20 @@ class ShopInfoViewController: UIViewController {
     
     var shopInfo: ShopModel!
     
+    class func createInstance() -> ShopInfoViewController {
+        // "Shop.storyboard"を読み込み、UIStoryboardのインスタンスを生成する
+        let storyboard = UIStoryboard(name: "ShopInfo", bundle: NSBundle.mainBundle())
+        
+        // storyboardにて指定された初期ビューコントローラーをインスタンス化する
+        let viewController = storyboard.instantiateInitialViewController() as! ShopInfoViewController
+        
+        // インスタンス化されたビューコントローラーを返す
+        return viewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         if shopInfo == nil {
@@ -33,7 +44,7 @@ class ShopInfoViewController: UIViewController {
         catchCopyLabel.text = shopInfo.catchCopy
         addressLabel.text = shopInfo.address
         
-        // ボタンの設定（URL・電話番号があれば遊興、無ければ向こうにする）
+        // ボタンの設定（URL・電話番号があれば有効、なければ無効にする）
         browserButton.enabled = shopInfo.url != nil || shopInfo.mobileUrl != nil || shopInfo.pcUrl != nil
         telButton.enabled = shopInfo.tel != nil
         
@@ -43,7 +54,7 @@ class ShopInfoViewController: UIViewController {
         var imageUrlStr: String!
         if shopInfo.imageUrl != nil && shopInfo.imageUrl! != "" {
             imageUrlStr = shopInfo.imageUrl
-        } else if shopInfo.thumbnailUrl != nil && shopInfo.thumbnailUrl! != "" {
+        } else if shopInfo.thumbnailUrl != nil && shopInfo.thumbnailUrl != "" {
             imageUrlStr = shopInfo.thumbnailUrl
         }
         
@@ -69,7 +80,7 @@ class ShopInfoViewController: UIViewController {
         })
     }
     
-    // Webボタンが押された時、対策のページをSafariで開く
+    // Webボタンが押された時、対象のページをSafariで開く
     @IBAction func browserButtonClicked(sender: UIButton) {
         if shopInfo == nil {
             return
@@ -82,7 +93,7 @@ class ShopInfoViewController: UIViewController {
         UIApplication.sharedApplication().openURL(url!)
     }
     
-    // 電話ボタンが押された時、電話番号
+    // 電話ボタンが押された時、電話番号に電話をかける
     @IBAction func telButtonClicked(sender: UIButton) {
         if shopInfo == nil || shopInfo.tel == nil {
             return
@@ -107,17 +118,6 @@ class ShopInfoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-        
-    class func createInstance() -> ShopInfoViewController {
-        // "Shop.storyboard"を読み込み、UIStoryboardのインスタンスを生成する
-        let storyboard = UIStoryboard(name: "ShopInfo", bundle: NSBundle.mainBundle())
-        
-        // storyboardにて指定された初期ビューコントローラーをインスタンス化する
-        let viewController = storyboard.instantiateInitialViewController() as! ShopInfoViewController
-        
-        // インスタンス化されたビューコントローラーを返す
-        return viewController
-    }
     
     func setShopInfo(shopInfo: ShopModel) {
         self.shopInfo = shopInfo

@@ -60,7 +60,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="browserButtonClicked:" destination="T73-4a-5ka" eventType="touchUpInside" id="TOD-7e-6bU"/>
+                                    <action selector="browserButtonClicked:" destination="T73-4a-5ka" eventType="touchUpInside" id="MPA-TW-GyO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zL8-iP-rqi">
@@ -98,9 +98,11 @@
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="3U0-my-oC6" id="EUO-GU-bm4"/>
+                        <outlet property="browserButton" destination="mgn-ZW-R2R" id="bte-LF-QkY"/>
                         <outlet property="catchCopyLabel" destination="e30-ro-3Lq" id="HR2-9f-fXg"/>
                         <outlet property="imageView" destination="QcY-3q-iGe" id="DYl-FE-jMs"/>
                         <outlet property="shopNameLavel" destination="nHl-6n-U6L" id="Tse-Wb-6ZE"/>
+                        <outlet property="telButton" destination="zL8-iP-rqi" id="sVr-CJ-p0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adF-Df-w1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
